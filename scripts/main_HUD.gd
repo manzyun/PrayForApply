@@ -1,13 +1,13 @@
 extends CanvasLayer
 
 signal generate_job_seeker
+signal posting_start
 
 func _ready():
 	pass
 
 func _on_GenerateButton_pressed():
 	emit_signal("generate_job_seeker")
-	pass
 
 func _process(delta):
 	update_flame_progress(50)

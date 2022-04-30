@@ -3,5 +3,5 @@
 [ext_resource path="res://fonts/architect-s-daughter/ArchitectsDaughter.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 85
+size = 30
 font_data = ExtResource( 1 )
