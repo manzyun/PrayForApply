@@ -19,6 +19,18 @@ custom_fonts/font = ExtResource( 2 )
 text = "Generate"
 align = 1
 valign = 1
-percent_visible = -0.125
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -88.5
+margin_top = -153.0
+margin_right = 88.5
+rect_scale = Vector2( 0.628821, 0.628821 )
+custom_fonts/font = ExtResource( 2 )
+text = "end"
 
 [connection signal="pressed" from="GenerateButton" to="." method="_on_GenerateButton_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
