@@ -1,7 +1,6 @@
 extends Node2D
 
 func _ready():
-	
 	pass
 	
 func new_game():
@@ -23,7 +22,6 @@ func construct_job_seeker():
 		"occupation": 0,
 		"employment": 0,
 		}
-	print_debug(job_seeker_dict)
 	return job_seeker_dict
 
 func _job_seeker_generator():
@@ -78,11 +76,11 @@ func _job_seeker_generator():
 	print_debug(job_seeker_status_dict)
 	return job_seeker_status_dict
 	
-func game_controller():
-	pass
 	
 
-
+	
+func game_controller():
+	pass
 
 func _on_ending_HUD_back_title():
 	pass # Replace with function body.
