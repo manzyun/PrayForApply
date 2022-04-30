@@ -7,5 +7,5 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://scenes/main_HUD.tscn")
+	get_tree().change_scene("res://scenes/main.tscn")
 	emit_signal("start_game")
