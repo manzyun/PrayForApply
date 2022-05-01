@@ -1,33 +1,24 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/main_HUD.gd" type="Script" id=1]
-[ext_resource path="res://textures/btn_hold.png" type="Texture" id=3]
-[ext_resource path="res://textures/btn_adopt.png" type="Texture" id=4]
-[ext_resource path="res://textures/btn_pray.png" type="Texture" id=5]
+[ext_resource path="res://fonts/architect-s-daughter/ArchitectsDaughter32.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scenes/FlameProgress.tscn" type="PackedScene" id=3]
 
 [node name="main_HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
 
-[node name="apply" type="TextureButton" parent="."]
-margin_right = 152.0
-margin_bottom = 152.0
-texture_normal = ExtResource( 4 )
+[node name="GenerateButton" type="Button" parent="."]
+margin_right = 500.0
+margin_bottom = 300.0
 
-[node name="stay" type="TextureButton" parent="."]
-margin_left = 170.0
-margin_right = 322.0
-margin_bottom = 152.0
-rect_pivot_offset = Vector2( -1238, 52 )
-texture_normal = ExtResource( 3 )
+[node name="Label" type="Label" parent="GenerateButton"]
+margin_right = 500.0
+margin_bottom = 300.0
+custom_fonts/font = ExtResource( 2 )
+text = "Generate"
+align = 1
+valign = 1
 
-[node name="pray" type="TextureButton" parent="."]
-margin_left = 340.0
-margin_top = 1.0
-margin_right = 492.0
-margin_bottom = 153.0
-rect_pivot_offset = Vector2( -1238, 52 )
-texture_normal = ExtResource( 5 )
+[node name="FlameProgress" parent="." instance=ExtResource( 3 )]
 
-[connection signal="pressed" from="apply" to="." method="_on_apply_pressed"]
-[connection signal="pressed" from="stay" to="." method="_on_stay_pressed"]
-[connection signal="pressed" from="pray" to="." method="_on_pray_pressed"]
+[connection signal="pressed" from="GenerateButton" to="." method="_on_GenerateButton_pressed"]
