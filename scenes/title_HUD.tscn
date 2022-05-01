@@ -1,3 +1,32 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://textures/enter_btn.png" type="Texture" id=1]
+[ext_resource path="res://scripts/title_HUD.gd" type="Script" id=2]
+[ext_resource path="res://textures/title_logo.png" type="Texture" id=3]
+[ext_resource path="res://textures/title_bg.png" type="Texture" id=4]
 
 [node name="title_HUD" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Titlebg" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+
+[node name="TitleLogo" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+
+[node name="StartButton" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -109.5
+margin_top = -200.0
+margin_right = 109.5
+margin_bottom = -100.0
+texture_normal = ExtResource( 1 )
+
+[connection signal="pressed" from="StartButton" to="." method="_on_Button_pressed"]
