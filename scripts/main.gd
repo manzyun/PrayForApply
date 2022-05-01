@@ -1,6 +1,9 @@
 extends Node2D
 
 signal generate_applyer_graphics
+signal play_or_apply_rating
+
+var g_applyer_graphics_pare = []
 
 func _ready():
     pass
@@ -75,9 +78,36 @@ func _applyer_status_generator():
     emit_signal("generate_applyer_graphics", applyer_status_dict)
     pass
     
-# ここでプレイヤー操作の評価を行う
-# 状態 -> 0:採用, 1:保留, 2:お祈り
-func _game_controller(var status):   
-    print_debug(status)
+func _on_Applyer_graphics_pare(var body, var head):
+    var applyer_graphics = []
+    applyer_graphics.append(body)
+    applyer_graphics.append(head)
+    # Sorry.
+    g_applyer_graphics_pare = applyer_graphics
     pass
     
+# ここでプレイヤー操作の評価を行う
+# 状態 -> 0:採用, 1:お祈り, 2:保留
+func _game_controller(var status):  
+    var correct = 2
+    var applyer_graphics = g_applyer_graphics_pare
+    if applyer_graphics[0] == 1:
+        correct = 1
+    if applyer_graphics[1] == 2:
+        correct = 1
+    if applyer_graphics[1] == 5:
+        correct = 1
+    if applyer_graphics[1] == 13:
+        correct = 1
+        
+    if status == correct:
+        # 上場ゲージを伸ばす
+        #print("上場")
+        emit_signal("play_or_apply_rating", 0)
+    else:
+        # 炎上ゲージを伸ばす
+        #print("炎上")
+        emit_signal("play_or_apply_rating", 1)
+        
+    print_debug(correct)
+    pass
