@@ -27,6 +27,8 @@
 [ext_resource path="res://textures/applyer_headF06.png" type="Texture" id=25]
 [ext_resource path="res://textures/applyer_headF05.png" type="Texture" id=26]
 [ext_resource path="res://textures/applyer_headF01.png" type="Texture" id=27]
+[ext_resource path="res://images/secret_personnel_memo.png" type="Texture" id=28]
+[ext_resource path="res://scenes/SecretPersonnelMemoDialog.tscn" type="PackedScene" id=29]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -56,6 +58,13 @@ script = ExtResource( 1 )
 [node name="main_HUD" parent="." instance=ExtResource( 2 )]
 offset = Vector2( 500, 300 )
 transform = Transform2D( 1, 0, 0, 1, 500, 300 )
+
+[node name="SecretPersonnelMemoDialog" parent="main_HUD" instance=ExtResource( 8 )]
+visible = false
+margin_left = -600.0
+margin_top = -300.0
+margin_right = -600.0
+margin_bottom = -300.0
 
 [node name="Texture" type="Control" parent="."]
 margin_right = 40.0
@@ -111,3 +120,19 @@ custom_fonts/font = SubResource( 3 )
 [connection signal="posting_start" from="main_HUD" to="#GENBA" method="_posting"]
 [connection signal="pray" from="main_HUD" to="." method="_game_controller"]
 [connection signal="stay" from="main_HUD" to="." method="_game_controller"]
+custom_fonts/font = SubResource( 1 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 1016.0
+margin_top = 840.0
+margin_right = 1528.0
+margin_bottom = 1543.0
+texture_normal = ExtResource( 28 )
+
+[connection signal="generate_job_seeker" from="main_HUD" to="." method="_job_seeker_generator"]
+[connection signal="posting_start" from="main_HUD" to="#GENBA" method="_posting"]
+[connection signal="pressed" from="TextureButton" to="main_HUD/SecretPersonnelMemoDialog" method="_on_TextureButton_pressed"]
