@@ -6,15 +6,13 @@
 [ext_resource path="res://images/flame_gauge_progress.png" type="Texture" id=4]
 
 [node name="FlameProgress" type="TextureProgress"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchor_left = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 388.0
-margin_top = -570.0
-margin_right = 561.0
-margin_bottom = 290.0
-rect_scale = Vector2( 0.55, 0.55 )
+margin_left = -176.0
+margin_top = 64.0
+margin_right = -3.0
+margin_bottom = -156.0
 texture_under = ExtResource( 3 )
 texture_progress = ExtResource( 4 )
 fill_mode = 3
