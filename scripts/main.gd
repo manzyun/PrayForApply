@@ -2,6 +2,9 @@ extends Node2D
 
 func _ready():
 	pass
+	
+func new_game():
+	pass
 
 func _process(delta):
 	pass
@@ -79,3 +82,5 @@ func _job_seeker_generator():
 func game_controller():
 	pass
 
+func _on_ending_HUD_back_title():
+	pass # Replace with function body.
