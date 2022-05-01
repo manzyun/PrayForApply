@@ -2,15 +2,12 @@ extends Node2D
 
 func _ready():
     pass
-
-func _process(delta):
-    pass
     
 func construct_prayer():
     var result = 0
     
-func construct_job_seeker():
-    var job_seeker_dict = {
+func construct_applyer():
+    var applyer_dict = {
         "name": "nanashi",
         "age": 0,
         "edu": "hoisotsu",
@@ -19,12 +16,12 @@ func construct_job_seeker():
         "occupation": 0,
         "employment": 0,
         }
-    return job_seeker_dict
+    return applyer_dict
 
-func _job_seeker_generator():
+func _applyer_status_generator():
     var rng = RandomNumberGenerator.new()
     rng.randomize()    
-    var job_seeker_status_dict = construct_job_seeker()
+    var applyer_status_dict = construct_applyer()
 
     var surname = [
         "Satou",
@@ -63,19 +60,19 @@ func _job_seeker_generator():
     var license = license_list[rng.randi() % license_list.size()]
     var occupation = rng.randi_range(0, 3)
     var employment = rng.randi_range(0, 3)
-    job_seeker_status_dict["name"] = fullname
-    job_seeker_status_dict["age"] = age
-    job_seeker_status_dict["edu"] = edu
-    job_seeker_status_dict["workhis"] = workhis
-    job_seeker_status_dict["license"] = license
-    job_seeker_status_dict["occupation"] = occupation
-    job_seeker_status_dict["employment"] = employment
-    print_debug(job_seeker_status_dict)
-    return job_seeker_status_dict
+    applyer_status_dict["name"] = fullname
+    applyer_status_dict["age"] = age
+    applyer_status_dict["edu"] = edu
+    applyer_status_dict["workhis"] = workhis
+    applyer_status_dict["license"] = license
+    applyer_status_dict["occupation"] = occupation
+    applyer_status_dict["employment"] = employment
+    print_debug(applyer_status_dict)
+    return applyer_status_dict
     
-    
-
-    
-func game_controller():
+# ここでプレイヤー操作の評価を行う
+# 状態 -> 0:採用, 1:保留, 2:お祈り
+func _game_controller(var status):   
+    print_debug(status)
     pass
-
+    
