@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/ListedProgress.gd" type="Script" id=1]
-[ext_resource path="res://images/listed_gauge.png" type="Texture" id=2]
-[ext_resource path="res://images/listed.png" type="Texture" id=3]
+[ext_resource path="res://textures/listed_gauge.png" type="Texture" id=2]
+[ext_resource path="res://textures/listed.png" type="Texture" id=3]
 
 [node name="ListedProgress" type="TextureProgress"]
 anchor_top = 1.0

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/FlameProgress.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/main_HUD.gd" type="Script" id=2]
+[ext_resource path="res://fonts/architect-s-daughter/ArchitectsDaughter32.tres" type="DynamicFont" id=3]
+
+[node name="main_HUD" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="GenerateButton" type="Button" parent="."]
+margin_right = 500.0
+margin_bottom = 300.0
+
+[node name="Label" type="Label" parent="GenerateButton"]
+margin_right = 500.0
+margin_bottom = 300.0
+custom_fonts/font = ExtResource( 3 )
+text = "Generate"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FlameProgress" parent="." instance=ExtResource( 1 )]
+[connection signal="pressed" from="GenerateButton" to="." method="_on_GenerateButton_pressed"]

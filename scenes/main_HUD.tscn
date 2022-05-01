@@ -27,7 +27,6 @@ margin_right = 492.0
 margin_bottom = 153.0
 rect_pivot_offset = Vector2( -1238, 52 )
 texture_normal = ExtResource( 5 )
-
 [connection signal="pressed" from="apply" to="." method="_on_apply_pressed"]
 [connection signal="pressed" from="stay" to="." method="_on_stay_pressed"]
 [connection signal="pressed" from="pray" to="." method="_on_pray_pressed"]
