@@ -89,11 +89,14 @@ func _game_controller(var status):
 	print_debug(status)
 	pass
 	
+# ending表示
+# 必要なところで呼んでください
 func end_game():
 	$ending_HUD/TextureRect.show()
 	$ending_HUD/EndLogo.show()
 	$ending_HUD/TitleButton.show()
 	
+	# パラメータでシグナルを変える
 	emit_signal("good_end")
 	pass
 	
