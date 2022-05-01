@@ -5,7 +5,9 @@ extends TextureProgress
 # var a = 2
 # var b = "text"
 
-const flame_icon_size_y = 64
+const flame_icon_size_y = 53
+const listed_icon_bottom_offset = 24
+const listed_icon_Top_offset = 64
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,4 +18,5 @@ func _ready():
 #	pass
 
 func _process(delta):
-	$FlameIcon.position.y = rect_size.y - flame_icon_size_y + rect_position.y - value * (rect_size.y / 100)
+	$FlameIcon.position.y = rect_size.y - flame_icon_size_y - listed_icon_bottom_offset \
+ 							- value * ((rect_size.y - flame_icon_size_y - listed_icon_Top_offset ) / 100)

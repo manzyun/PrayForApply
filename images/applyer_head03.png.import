@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/listed_gauge_progress_tmp.png-1e4a603bf409846e6035eae2133bf3b5.stex"
+path="res://.import/applyer_head03.png-632d69372535ea9068d09ec2c6cdf12f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/listed_gauge_progress_tmp.png"
-dest_files=[ "res://.import/listed_gauge_progress_tmp.png-1e4a603bf409846e6035eae2133bf3b5.stex" ]
+source_file="res://images/applyer_head03.png"
+dest_files=[ "res://.import/applyer_head03.png-632d69372535ea9068d09ec2c6cdf12f.stex" ]
 
 [params]
 

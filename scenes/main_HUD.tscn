@@ -3,6 +3,7 @@
 [ext_resource path="res://scripts/main_HUD.gd" type="Script" id=1]
 [ext_resource path="res://fonts/architect-s-daughter/ArchitectsDaughter32.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scenes/FlameProgress.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ListedProgress.tscn" type="PackedScene" id=4]
 
 [sub_resource type="InputEventAction" id=1]
 action = "end_game"
@@ -40,6 +41,8 @@ shortcut = SubResource( 2 )
 text = "end"
 
 [node name="FlameProgress" parent="." instance=ExtResource( 3 )]
+
+[node name="ListedProgress" parent="." instance=ExtResource( 4 )]
 
 [connection signal="pressed" from="GenerateButton" to="." method="_on_GenerateButton_pressed"]
 [connection signal="pressed" from="EndButton" to="." method="_on_EndButton_pressed"]
