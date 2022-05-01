@@ -9,7 +9,9 @@ signal bad_end
 signal time_out
 
 func _ready():
-	pass
+	$ending_HUD/TextureRect.hide()
+	$ending_HUD/EndLogo.hide()
+	$ending_HUD/TitleButton.hide()
 	
 func construct_prayer():
 	var result = 0
@@ -88,6 +90,10 @@ func _game_controller(var status):
 	pass
 	
 func end_game():
+	$ending_HUD/TextureRect.show()
+	$ending_HUD/EndLogo.show()
+	$ending_HUD/TitleButton.show()
+	
 	emit_signal("good_end")
 	pass
 	

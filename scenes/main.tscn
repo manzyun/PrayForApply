@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/main_HUD.tscn" type="PackedScene" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://textures/applyer_headF06.png" type="Texture" id=25]
 [ext_resource path="res://textures/applyer_headF05.png" type="Texture" id=26]
 [ext_resource path="res://textures/applyer_headF01.png" type="Texture" id=27]
+[ext_resource path="res://scenes/ending_HUD.tscn" type="PackedScene" id=28]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -49,6 +50,12 @@ size = 21
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 6 )
+
+[sub_resource type="InputEventAction" id=4]
+action = "end_game"
+
+[sub_resource type="ShortCut" id=5]
+shortcut = SubResource( 4 )
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -103,9 +110,20 @@ margin_bottom = 22.0
 margin_bottom = 22.0
 custom_fonts/font = SubResource( 3 )
 
+[node name="ending_HUD" parent="." instance=ExtResource( 28 )]
+
+[node name="Button" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+shortcut = SubResource( 5 )
+
+[connection signal="bad_end" from="." to="ending_HUD" method="show_bad_end"]
 [connection signal="generate_applyer_graphics" from="." to="Applyer" method="_generate_applyer_graphics"]
+[connection signal="good_end" from="." to="ending_HUD" method="show_good_end"]
+[connection signal="time_out" from="." to="ending_HUD" method="show_time_out"]
 [connection signal="apply" from="main_HUD" to="." method="_game_controller"]
 [connection signal="generate_applyer_status" from="main_HUD" to="." method="_applyer_status_generator"]
 [connection signal="posting_start" from="main_HUD" to="#GENBA" method="_posting"]
 [connection signal="pray" from="main_HUD" to="." method="_game_controller"]
 [connection signal="stay" from="main_HUD" to="." method="_game_controller"]
+[connection signal="pressed" from="Button" to="." method="end_game"]
