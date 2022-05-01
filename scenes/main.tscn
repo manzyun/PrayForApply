@@ -65,9 +65,6 @@ script = ExtResource( 1 )
 [node name="Texture" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="bg" type="TextureRect" parent="Texture"]
 margin_right = 1920.0
@@ -128,7 +125,9 @@ margin_bottom = 20.0
 shortcut = SubResource( 5 )
 
 [connection signal="bad_end" from="." to="ending_HUD" method="show_bad_end"]
+[connection signal="generate_applyer_graphics" from="." to="Applyer" method="_generate_applyer_graphics"]
 [connection signal="good_end" from="." to="ending_HUD" method="show_good_end"]
+[connection signal="play_or_apply_rating" from="." to="main_HUD" method="_calc_score"]
 [connection signal="time_out" from="." to="ending_HUD" method="show_time_out"]
 [connection signal="apply" from="main_HUD" to="." method="_game_controller"]
 [connection signal="generate_applyer_status" from="main_HUD" to="." method="_applyer_status_generator"]
