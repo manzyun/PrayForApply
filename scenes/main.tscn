@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/main_HUD.tscn" type="PackedScene" id=2]
@@ -29,6 +29,8 @@
 [ext_resource path="res://textures/applyer_headF01.png" type="Texture" id=27]
 [ext_resource path="res://scenes/FlameProgress.tscn" type="PackedScene" id=28]
 [ext_resource path="res://scenes/ListedProgress.tscn" type="PackedScene" id=29]
+[ext_resource path="res://scenes/SecretPersonnelMemoDialog.tscn" type="PackedScene" id=30]
+[ext_resource path="res://images/secret_personnel_memo.png" type="Texture" id=31]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -80,6 +82,11 @@ margin_top = 56.0
 margin_bottom = -164.0
 
 [node name="ListedProgress" parent="main_HUD" instance=ExtResource( 29 )]
+margin_top = -152.0
+margin_bottom = 1.0
+
+[node name="SecretPersonnelMemoDialog" parent="main_HUD" instance=ExtResource( 30 )]
+visible = false
 
 [node name="Applyer" type="Node2D" parent="."]
 position = Vector2( 750, 500 )
@@ -116,6 +123,13 @@ margin_bottom = 22.0
 margin_bottom = 22.0
 custom_fonts/font = SubResource( 3 )
 
+[node name="SecretPersonnelMemoButton" type="TextureButton" parent="."]
+margin_left = 728.0
+margin_top = 744.0
+margin_right = 1240.0
+margin_bottom = 1447.0
+texture_normal = ExtResource( 31 )
+
 [connection signal="generate_applyer_graphics" from="." to="Applyer" method="_generate_applyer_graphics"]
 [connection signal="play_or_apply_rating" from="." to="main_HUD" method="_calc_score"]
 [connection signal="apply" from="main_HUD" to="." method="_game_controller"]
@@ -124,3 +138,4 @@ custom_fonts/font = SubResource( 3 )
 [connection signal="pray" from="main_HUD" to="." method="_game_controller"]
 [connection signal="stay" from="main_HUD" to="." method="_game_controller"]
 [connection signal="graphics_pare" from="Applyer" to="." method="_on_Applyer_graphics_pare"]
+[connection signal="pressed" from="SecretPersonnelMemoButton" to="main_HUD/SecretPersonnelMemoDialog" method="_on_SecretPersonnelMemoButton_pressed"]
