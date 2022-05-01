@@ -23,4 +23,5 @@ __meta__ = {
 }
 
 [node name="FlameProgress" parent="." instance=ExtResource( 1 )]
+
 [connection signal="pressed" from="GenerateButton" to="." method="_on_GenerateButton_pressed"]

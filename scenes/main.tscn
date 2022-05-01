@@ -138,5 +138,7 @@ shortcut = SubResource( 5 )
 [connection signal="posting_start" from="main_HUD" to="#GENBA" method="_posting"]
 [connection signal="pray" from="main_HUD" to="." method="_game_controller"]
 [connection signal="stay" from="main_HUD" to="." method="_game_controller"]
+[connection signal="flame_max" from="main_HUD/FlameProgress" to="." method="end_game"]
+[connection signal="listed_max" from="main_HUD/ListedProgress" to="." method="end_game"]
 [connection signal="graphics_pare" from="Applyer" to="." method="_on_Applyer_graphics_pare"]
 [connection signal="pressed" from="Button" to="." method="end_game"]

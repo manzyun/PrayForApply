@@ -2,17 +2,26 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$BadLogo.hide()
+	$GoodLogo.hide()
+	$TimeOutLogo.hide()
 	pass # Replace with function body.
 
 func _on_Button_pressed():
 	get_tree().change_scene("res://scenes/title_HUD.tscn")
-	emit_signal("back_title")
 
 func show_bad_end():
-	$EndLogo.texture.resource_path = "res://textures/badend_logo.png"
+	$BadLogo.show()
+	display_node()
 	
 func show_good_end():
-	$EndLogo.texture.resource_path = "res://textures/goodend_logo.png"
+	$GoodLogo.show()
+	display_node()
 	
 func show_time_out():
-	$EndLogo.texture.resource_path = "res://textures/normalend_logo.png"
+	$TimeOutLogo.show()
+	display_node()
+	
+func display_node():
+	$TextureRect.show()
+	$TitleButton.show()

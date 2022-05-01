@@ -20,3 +20,4 @@ func _ready():
 func _process(delta):
 	$FlameIcon.position.y = rect_size.y - flame_icon_size_y - listed_icon_bottom_offset \
  							- value * ((rect_size.y - flame_icon_size_y - listed_icon_Top_offset ) / 100)
+	
