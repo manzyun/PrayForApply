@@ -9,3 +9,13 @@ func _ready():
 func _on_Button_pressed():
 	get_tree().change_scene("res://scenes/title_HUD.tscn")
 	emit_signal("back_title")
+
+func show_bad_end():
+	$EndLogo
+	pass
+	
+func show_good_end():
+	pass
+	
+func show_time_out():
+	pass

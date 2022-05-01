@@ -89,9 +89,6 @@ animation = "head"
 
 [node name="#GENBA" type="Control" parent="."]
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ScrollContainer" type="ScrollContainer" parent="#GENBA"]
 margin_left = 24.0
@@ -105,6 +102,7 @@ margin_bottom = 22.0
 [node name="Label" type="Label" parent="#GENBA/ScrollContainer/VBoxContainer"]
 margin_bottom = 22.0
 custom_fonts/font = SubResource( 3 )
+
 [connection signal="generate_applyer_graphics" from="." to="Applyer" method="_generate_applyer_graphics"]
 [connection signal="apply" from="main_HUD" to="." method="_game_controller"]
 [connection signal="generate_applyer_status" from="main_HUD" to="." method="_applyer_status_generator"]
