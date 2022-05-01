@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/main_HUD.tscn" type="PackedScene" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://scenes/FlameProgress.tscn" type="PackedScene" id=28]
 [ext_resource path="res://scenes/ListedProgress.tscn" type="PackedScene" id=29]
 [ext_resource path="res://scenes/ending_HUD.tscn" type="PackedScene" id=30]
+[ext_resource path="res://scenes/Resume.tscn" type="PackedScene" id=31]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -124,8 +125,11 @@ margin_right = 12.0
 margin_bottom = 20.0
 shortcut = SubResource( 5 )
 
+[node name="Resume" parent="." instance=ExtResource( 31 )]
+
 [connection signal="bad_end" from="." to="ending_HUD" method="show_bad_end"]
 [connection signal="generate_applyer_graphics" from="." to="Applyer" method="_generate_applyer_graphics"]
+[connection signal="generate_applyer_graphics" from="." to="Resume" method="_on_main_generate_applyer_graphics"]
 [connection signal="good_end" from="." to="ending_HUD" method="show_good_end"]
 [connection signal="play_or_apply_rating" from="." to="main_HUD" method="_calc_score"]
 [connection signal="time_out" from="." to="ending_HUD" method="show_time_out"]

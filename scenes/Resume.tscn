@@ -40,7 +40,7 @@ margin_right = 227.0
 margin_bottom = 123.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "テスト　太郎"
+text = "田中　太郎"
 
 [node name="ApplyerAge" type="Label" parent="."]
 margin_left = 259.0
@@ -67,7 +67,7 @@ margin_right = 157.0
 margin_bottom = 330.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "テストアルバイト"
+text = "アルバイト"
 
 [node name="ApplyerLicense" type="Label" parent="."]
 margin_left = 44.0
@@ -76,7 +76,7 @@ margin_right = 284.0
 margin_bottom = 428.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "テストパスポート"
+text = "ITパスポート"
 
 [node name="ApplyerAppeal" type="Label" parent="."]
 margin_left = 47.0
@@ -85,7 +85,7 @@ margin_right = 257.0
 margin_bottom = 527.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "テスト出来ます"
+text = "Linux 出来ます"
 
 [node name="ApplyerPreferredDepartment" type="Label" parent="."]
 margin_left = 47.0
@@ -94,9 +94,10 @@ margin_right = 167.0
 margin_bottom = 624.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "テスト部"
+text = "CentOS部"
 
 [node name="ApplyerPhoto" type="ColorRect" parent="."]
+visible = false
 margin_left = 362.0
 margin_top = 23.0
 margin_right = 476.0
@@ -104,6 +105,7 @@ margin_bottom = 175.0
 color = Color( 0.239216, 0.352941, 0.741176, 1 )
 
 [node name="ApplyerBody" type="TextureRect" parent="ApplyerPhoto"]
+visible = false
 margin_top = -24.0
 margin_right = 701.0
 margin_bottom = 1056.0
@@ -111,6 +113,7 @@ rect_scale = Vector2( 0.163, 0.163 )
 texture = ExtResource( 2 )
 
 [node name="ApplyerHead" type="TextureRect" parent="ApplyerPhoto"]
+visible = false
 margin_top = -22.0
 margin_right = 701.0
 margin_bottom = 1058.0
