@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/listed_gauge.png-b20f65b8b0d4e923dd8aa9aa6db2f0d3.stex"
+path="res://.import/backtotitle_btn.png-c48cda8157a3c4b04a4b0a5f59e0eee8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/listed_gauge.png"
-dest_files=[ "res://.import/listed_gauge.png-b20f65b8b0d4e923dd8aa9aa6db2f0d3.stex" ]
+source_file="res://textures/backtotitle_btn.png"
+dest_files=[ "res://.import/backtotitle_btn.png-c48cda8157a3c4b04a4b0a5f59e0eee8.stex" ]
 
 [params]
 

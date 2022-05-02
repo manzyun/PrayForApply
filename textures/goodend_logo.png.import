@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/listed_gauge.png-b20f65b8b0d4e923dd8aa9aa6db2f0d3.stex"
+path="res://.import/goodend_logo.png-2725e1e884b46bfbedfb3fb7eb58163d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/listed_gauge.png"
-dest_files=[ "res://.import/listed_gauge.png-b20f65b8b0d4e923dd8aa9aa6db2f0d3.stex" ]
+source_file="res://textures/goodend_logo.png"
+dest_files=[ "res://.import/goodend_logo.png-2725e1e884b46bfbedfb3fb7eb58163d.stex" ]
 
 [params]
 

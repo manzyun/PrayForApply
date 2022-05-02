@@ -18,9 +18,6 @@ texture_progress = ExtResource( 4 )
 fill_mode = 3
 radial_fill_degrees = 100.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="FlameIcon" type="Sprite" parent="."]
 position = Vector2( 90, 780 )

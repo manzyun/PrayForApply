@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/listed_gauge.png-b20f65b8b0d4e923dd8aa9aa6db2f0d3.stex"
+path="res://.import/normalend_logo.png-0851e380257ab35bd433aa0705131a10.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/listed_gauge.png"
-dest_files=[ "res://.import/listed_gauge.png-b20f65b8b0d4e923dd8aa9aa6db2f0d3.stex" ]
+source_file="res://textures/normalend_logo.png"
+dest_files=[ "res://.import/normalend_logo.png-0851e380257ab35bd433aa0705131a10.stex" ]
 
 [params]
 
