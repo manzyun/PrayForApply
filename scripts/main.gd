@@ -13,7 +13,6 @@ signal time_out
 
 func _ready():
 	$ending_HUD/TextureRect.hide()
-	$ending_HUD/EndLogo.hide()
 	$ending_HUD/TitleButton.hide()
 	
 func construct_prayer():
@@ -269,13 +268,15 @@ func _game_controller(var status):
 
 # ending表示
 # 必要なところで呼んでください
-func end_game():
-	$ending_HUD/TextureRect.show()
-	$ending_HUD/EndLogo.show()
-	$ending_HUD/TitleButton.show()
-	
-	# パラメータでシグナルを変える
-	emit_signal("good_end")
+func end_game(end):
+	if end == 0:
+		emit_signal("time_out")
+	if end == 1:
+		emit_signal("good_end")
+		print("good")
+	if end == 2:
+		emit_signal("bad_end")
+		print("bad")
 	pass
 
 
