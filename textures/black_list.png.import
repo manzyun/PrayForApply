@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/applyer_head03.png-632d69372535ea9068d09ec2c6cdf12f.stex"
+path="res://.import/black_list.png-8f66beadfdb30a6ae5cad107a27e5088.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/applyer_head03.png"
-dest_files=[ "res://.import/applyer_head03.png-632d69372535ea9068d09ec2c6cdf12f.stex" ]
+source_file="res://textures/black_list.png"
+dest_files=[ "res://.import/black_list.png-8f66beadfdb30a6ae5cad107a27e5088.stex" ]
 
 [params]
 
