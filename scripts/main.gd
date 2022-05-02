@@ -30,10 +30,12 @@ func construct_applyer():
 		}
 	return applyer_dict
 
+
 func _applyer_status_generator():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()    
 	var applyer_status_dict = construct_applyer()
+
 
 	var surname = [
 		"佐藤",
@@ -240,6 +242,7 @@ func _on_Applyer_graphics_pare(var body, var head):
 # ここでプレイヤー操作の評価を行う
 # 状態 -> 0:採用, 1:お祈り, 2:保留
 func _game_controller(var status):  
+
 	var correct = 2
 	var applyer_graphics = g_applyer_graphics_pare
 	if applyer_graphics[0] == 1:

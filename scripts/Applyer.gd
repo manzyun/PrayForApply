@@ -9,6 +9,7 @@ func _ready():
 	pass
 	
 func _generate_applyer_graphics(var dict):
+
 	var rng = RandomNumberGenerator.new()
 	rng.randomize() 
 	
