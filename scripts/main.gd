@@ -12,8 +12,7 @@ signal bad_end
 signal time_out
 
 func _ready():
-	$ending_HUD/TextureRect.hide()
-	$ending_HUD/TitleButton.hide()
+	pass
 	
 func construct_prayer():
 	var result = 0
@@ -272,6 +271,13 @@ func _game_controller(var status):
 # ending表示
 # 必要なところで呼んでください
 func end_game(end):
+	
+	$main_HUD/FlameProgress.hide()
+	$main_HUD/ListedProgress.hide()
+	$main_HUD/apply.hide()
+	$main_HUD/pray.hide()
+	$main_HUD/stay.hide()
+	$ending_HUD.show()
 	if end == 0:
 		emit_signal("time_out")
 	if end == 1:

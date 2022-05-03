@@ -123,8 +123,6 @@ margin_bottom = 22.0
 margin_bottom = 22.0
 custom_fonts/font = SubResource( 3 )
 
-[node name="ending_HUD" parent="." instance=ExtResource( 30 )]
-
 [node name="Button" type="Button" parent="."]
 margin_right = 12.0
 margin_bottom = 20.0
@@ -138,6 +136,13 @@ margin_top = 768.0
 margin_right = 1184.0
 margin_bottom = 1471.0
 texture_normal = ExtResource( 33 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ending_HUD" parent="." instance=ExtResource( 30 )]
+visible = false
 
 [connection signal="bad_end" from="." to="ending_HUD" method="show_bad_end"]
 [connection signal="generate_applyer_graphics" from="." to="Applyer" method="_generate_applyer_graphics"]

@@ -13,25 +13,24 @@ flags = 4
 load_path = "res://.import/badend_logo.png-74548be723c0d5b20cd73950308da91d.stex"
 script = SubResource( 2 )
 
-[node name="ending_HUD" type="CanvasLayer"]
+[node name="ending_HUD" type="TextureRect"]
+texture = ExtResource( 3 )
 script = ExtResource( 2 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 3 )
-
 [node name="BadLogo" type="TextureRect" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = SubResource( 1 )
 
 [node name="GoodLogo" type="TextureRect" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 1 )
 
 [node name="TimeOutLogo" type="TextureRect" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 5 )
@@ -44,7 +43,7 @@ anchor_bottom = 1.0
 margin_left = -205.5
 margin_top = -200.0
 margin_right = 205.5
-margin_bottom = -89.0
+margin_bottom = -100.0
 texture_normal = ExtResource( 4 )
 
 [connection signal="pressed" from="TitleButton" to="." method="_on_Button_pressed"]

@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends TextureRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,5 +23,4 @@ func show_time_out():
 	display_node()
 	
 func display_node():
-	$TextureRect.show()
 	$TitleButton.show()
