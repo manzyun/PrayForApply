@@ -239,31 +239,35 @@ func _on_Applyer_graphics_pare(var body, var head):
 	pass
 	
 # ここでプレイヤー操作の評価を行う
-# 状態 -> 0:採用, 1:お祈り, 2:保留
+# 状態 -> 0:採用, 1:保留, 2:お祈り
 func _game_controller(var status):  
 
-	var correct = 2
+	var correct = 0
 	var applyer_graphics = g_applyer_graphics_pare
 	if applyer_graphics[0] == 1:
-		correct = 1
+		correct = 2
 	if applyer_graphics[1] == 2:
-		correct = 1
+		correct = 2
 	if applyer_graphics[1] == 5:
-		correct = 1
+		correct = 2
 	if applyer_graphics[1] == 13:
-		correct = 1
-
+		correct = 2
 	if applyer_graphics[0] == -1:
-		correct = 1
+		correct = 2
 
-	if status == correct:
+	if (status == 0) and (correct == 0):
 		# 上場ゲージを伸ばす
 		#print("上場")
 		emit_signal("play_or_apply_rating", 0)
-	else:
+	elif status == 1:
+		# 保留なのでランダム抽選
+		emit_signal("play_or_apply_rating", 1)
+	elif (status == 0) and (correct != 0):
 		# 炎上ゲージを伸ばす
 		#print("炎上")
-		emit_signal("play_or_apply_rating", 1)
+		emit_signal("play_or_apply_rating", 2)
+	else:
+		pass
 		
 	print_debug(correct)
 	pass

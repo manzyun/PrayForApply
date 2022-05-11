@@ -13,20 +13,19 @@ func _ready():
 	update_listed_progress(0)
 	pass
 	
-func _process(delta):
-	pass
-	
 func _calc_score(score):
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	
 	if (score == 0):
 		update_listed_progress(15)
-	if (score == 1):
+	if(score == 1):
+		if (rng.randi_range(0, 1) == 0):
+			update_flame_progress(rng.randi_range(0, 25))
+		else:
+			update_listed_progress(rng.randi_range(0, 5))
+	if (score == 2):
 		update_flame_progress(15)
-	if(score == 2):
-		update_flame_progress(rng.randi_range(-30, 30))
-		update_listed_progress(rng.randi_range(-30, 30))
 	pass
 	
 func init_flame_progress(flame_point):
@@ -47,14 +46,14 @@ func _on_apply_pressed():
 	emit_signal("apply", 0)
 	pass
 
-func _on_pray_pressed():
-	emit_signal("generate_applyer_status")
-	emit_signal("posting_start")
-	emit_signal("pray", 1)
-	pass
-
 func _on_stay_pressed():
 	emit_signal("generate_applyer_status")
 	emit_signal("posting_start")
-	emit_signal("stay", 2)
+	emit_signal("stay", 1)
+	pass
+
+func _on_pray_pressed():
+	emit_signal("generate_applyer_status")
+	emit_signal("posting_start")
+	emit_signal("pray", 2)
 	pass
