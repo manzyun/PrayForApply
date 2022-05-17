@@ -32,7 +32,14 @@ func set_applyer_type(type):
 		$ApplyerType.text = type
 		
 func set_applyer_name(name):
-	$ApplyerName.text = name
+	$ApplyerName.text = name	
+
+func set_applyer_gender(gender):
+	match gender:
+		0:
+			$ApplyerGender.text = "男"
+		1:
+			$ApplyerGender.text = "女"
 
 func set_applyer_age(age):
 	$ApplyerAge.text = str(age) + "歳"
@@ -56,11 +63,11 @@ func set_applyer_photo(body_image_path, head_image_path):
 	$ApplyerPhoto/ApplyerBody.texture = load(body_image_path)
 	$ApplyerPhoto/ApplyerHead.texture = load(head_image_path)
 
-
 func _on_main_generate_applyer_graphics(status):
 	set_applyer_type(TYPE_LIST[rand_range(0,2)])
-	set_applyer_age(status["age"])
 	set_applyer_name(status["name"])
+	set_applyer_age(status["age"])
+	set_applyer_gender(status["gender"])
 	set_applyer_last_education(status["edu"])
 	set_applyer_work_history(status["workhis"])
 	set_applyer_apeal(status["license"])

@@ -9,16 +9,16 @@
 font_path = "res://fonts/mogihaPen_ver120/mogihaPen.ttf"
 
 [sub_resource type="DynamicFont" id=1]
-size = 30
+size = 28
 outline_size = 1
 outline_color = Color( 0.788235, 0.788235, 0.784314, 1 )
 font_data = SubResource( 2 )
 
 [node name="Resume" type="TextureRect"]
-margin_left = 1157.0
-margin_top = 143.0
-margin_right = 1659.0
-margin_bottom = 850.0
+margin_left = 1156.0
+margin_top = 141.0
+margin_right = 1658.0
+margin_bottom = 848.0
 texture = ExtResource( 1 )
 script = ExtResource( 4 )
 
@@ -34,67 +34,89 @@ custom_fonts/font = SubResource( 1 )
 text = "新卒"
 
 [node name="ApplyerName" type="Label" parent="."]
-margin_left = 47.0
-margin_top = 92.0
-margin_right = 227.0
-margin_bottom = 123.0
+margin_left = 39.0
+margin_top = 94.0
+margin_right = 238.0
+margin_bottom = 125.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "田中　太郎"
+valign = 1
 
 [node name="ApplyerAge" type="Label" parent="."]
-margin_left = 259.0
-margin_top = 93.0
-margin_right = 319.0
-margin_bottom = 127.0
+margin_left = 267.0
+margin_top = 75.0
+margin_right = 327.0
+margin_bottom = 109.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "22歳"
 
+[node name="ApplyerGender" type="Label" parent="."]
+margin_left = 267.0
+margin_top = 112.0
+margin_right = 327.0
+margin_bottom = 147.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "男"
+align = 1
+valign = 1
+
 [node name="ApplyerLastEducation" type="Label" parent="."]
-margin_left = 57.0
-margin_top = 202.0
-margin_right = 162.0
-margin_bottom = 233.0
+margin_left = 45.0
+margin_top = 192.0
+margin_right = 466.0
+margin_bottom = 249.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "T大学卒"
+valign = 1
+autowrap = true
 
 [node name="ApplyerWorkHistory" type="Label" parent="."]
-margin_left = 52.0
-margin_top = 299.0
-margin_right = 157.0
-margin_bottom = 330.0
+margin_left = 39.0
+margin_top = 289.0
+margin_right = 468.0
+margin_bottom = 348.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "アルバイト"
+valign = 1
+autowrap = true
 
 [node name="ApplyerLicense" type="Label" parent="."]
-margin_left = 44.0
-margin_top = 397.0
-margin_right = 284.0
-margin_bottom = 428.0
+margin_left = 40.0
+margin_top = 387.0
+margin_right = 467.0
+margin_bottom = 444.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "ITパスポート"
+valign = 1
+autowrap = true
 
 [node name="ApplyerAppeal" type="Label" parent="."]
-margin_left = 47.0
-margin_top = 496.0
-margin_right = 257.0
-margin_bottom = 527.0
+margin_left = 39.0
+margin_top = 484.0
+margin_right = 468.0
+margin_bottom = 541.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Linux 出来ます"
+valign = 1
+autowrap = true
 
 [node name="ApplyerPreferredDepartment" type="Label" parent="."]
-margin_left = 47.0
-margin_top = 593.0
-margin_right = 167.0
-margin_bottom = 624.0
+margin_left = 38.0
+margin_top = 582.0
+margin_right = 470.0
+margin_bottom = 639.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "CentOS部"
+valign = 1
+autowrap = true
 
 [node name="ApplyerPhoto" type="ColorRect" parent="."]
 visible = false
