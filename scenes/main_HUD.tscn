@@ -31,6 +31,7 @@ margin_bottom = 929.0
 rect_pivot_offset = Vector2( -1238, 52 )
 texture_normal = ExtResource( 5 )
 
+[connection signal="player_decide" from="." to="." method="_calc_score"]
 [connection signal="pressed" from="apply" to="." method="_on_apply_pressed"]
 [connection signal="pressed" from="stay" to="." method="_on_stay_pressed"]
 [connection signal="pressed" from="pray" to="." method="_on_pray_pressed"]
