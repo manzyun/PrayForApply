@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/main_HUD.tscn" type="PackedScene" id=2]
@@ -6,49 +6,13 @@
 [ext_resource path="res://scripts/#GENBA.gd" type="Script" id=4]
 [ext_resource path="res://textures/bg.png" type="Texture" id=5]
 [ext_resource path="res://fonts/mogihaPen_ver120/mogihaPen.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://textures/applyer_head03.png" type="Texture" id=7]
-[ext_resource path="res://textures/applyer_head04.png" type="Texture" id=8]
-[ext_resource path="res://textures/applyer_body02.png" type="Texture" id=9]
-[ext_resource path="res://textures/applyer_head01.png" type="Texture" id=10]
-[ext_resource path="res://textures/applyer_body01.png" type="Texture" id=11]
-[ext_resource path="res://textures/applyer_head02.png" type="Texture" id=12]
-[ext_resource path="res://scripts/Applyer.gd" type="Script" id=13]
-[ext_resource path="res://textures/applyer_headF03.png" type="Texture" id=14]
-[ext_resource path="res://textures/applyer_headF04.png" type="Texture" id=15]
-[ext_resource path="res://textures/applyer_bodyF02.png" type="Texture" id=16]
-[ext_resource path="res://textures/applyer_head08.png" type="Texture" id=17]
-[ext_resource path="res://textures/applyer_headF08.png" type="Texture" id=18]
-[ext_resource path="res://textures/applyer_head05.png" type="Texture" id=19]
-[ext_resource path="res://textures/applyer_head07.png" type="Texture" id=20]
-[ext_resource path="res://textures/applyer_headF02.png" type="Texture" id=21]
-[ext_resource path="res://textures/applyer_headF07.png" type="Texture" id=22]
-[ext_resource path="res://textures/applyer_bodyF01.png" type="Texture" id=23]
-[ext_resource path="res://textures/applyer_head06.png" type="Texture" id=24]
-[ext_resource path="res://textures/applyer_headF06.png" type="Texture" id=25]
-[ext_resource path="res://textures/applyer_headF05.png" type="Texture" id=26]
-[ext_resource path="res://textures/applyer_headF01.png" type="Texture" id=27]
+[ext_resource path="res://scenes/Applyer.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/FlameProgress.tscn" type="PackedScene" id=28]
 [ext_resource path="res://scenes/ListedProgress.tscn" type="PackedScene" id=29]
 [ext_resource path="res://scenes/ending_HUD.tscn" type="PackedScene" id=30]
 [ext_resource path="res://scenes/Resume.tscn" type="PackedScene" id=31]
 [ext_resource path="res://scenes/SecretPersonnelMemoDialog.tscn" type="PackedScene" id=32]
 [ext_resource path="res://textures/secret_personnel_memo.png" type="Texture" id=33]
-
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 11 ), ExtResource( 9 ), ExtResource( 23 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "body",
-"speed": 5.0
-} ]
-
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 19 ), ExtResource( 24 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 27 ), ExtResource( 21 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 18 ) ],
-"loop": true,
-"name": "head",
-"speed": 5.0
-} ]
 
 [sub_resource type="DynamicFont" id=3]
 size = 21
@@ -88,24 +52,16 @@ margin_bottom = -164.0
 
 [node name="ListedProgress" parent="main_HUD" instance=ExtResource( 29 )]
 
+[node name="Resume" parent="main_HUD" instance=ExtResource( 31 )]
+margin_left = 1240.0
+margin_top = 56.0
+margin_right = 1742.0
+margin_bottom = 763.0
+
 [node name="SecretPersonnelMemoDialog" parent="main_HUD" instance=ExtResource( 32 )]
 visible = false
 
-[node name="Applyer" type="Node2D" parent="."]
-position = Vector2( 750, 500 )
-scale = Vector2( 0.8, 0.8 )
-script = ExtResource( 13 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Body" type="AnimatedSprite" parent="Applyer"]
-frames = SubResource( 1 )
-animation = "body"
-
-[node name="Head" type="AnimatedSprite" parent="Applyer"]
-frames = SubResource( 2 )
-animation = "head"
+[node name="Applyer" parent="." instance=ExtResource( 7 )]
 
 [node name="#GENBA" type="Control" parent="."]
 script = ExtResource( 4 )
@@ -128,8 +84,6 @@ margin_right = 12.0
 margin_bottom = 20.0
 shortcut = SubResource( 5 )
 
-[node name="Resume" parent="." instance=ExtResource( 31 )]
-
 [node name="SecretPersonnelMemoButton" type="TextureButton" parent="."]
 margin_left = 672.0
 margin_top = 768.0
@@ -145,8 +99,8 @@ margin_bottom = 40.0
 visible = false
 
 [connection signal="bad_end" from="." to="ending_HUD" method="show_bad_end"]
+[connection signal="generate_applyer_graphics" from="." to="main_HUD/Resume" method="_on_main_generate_applyer_graphics"]
 [connection signal="generate_applyer_graphics" from="." to="Applyer" method="_generate_applyer_graphics"]
-[connection signal="generate_applyer_graphics" from="." to="Resume" method="_on_main_generate_applyer_graphics"]
 [connection signal="good_end" from="." to="ending_HUD" method="show_good_end"]
 [connection signal="play_or_apply_rating" from="." to="main_HUD" method="_calc_score"]
 [connection signal="time_out" from="." to="ending_HUD" method="show_time_out"]
@@ -155,5 +109,6 @@ visible = false
 [connection signal="flame_max" from="main_HUD/FlameProgress" to="." method="end_game"]
 [connection signal="listed_max" from="main_HUD/ListedProgress" to="." method="end_game"]
 [connection signal="graphics_pare" from="Applyer" to="." method="_on_Applyer_graphics_pare"]
+[connection signal="graphics_pare" from="Applyer" to="main_HUD/Resume" method="_on_Applyer_graphics_pare"]
 [connection signal="pressed" from="Button" to="." method="end_game"]
 [connection signal="pressed" from="SecretPersonnelMemoButton" to="main_HUD/SecretPersonnelMemoDialog" method="_on_SecretPersonnelMemoButton_pressed"]
