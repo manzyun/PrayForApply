@@ -3,12 +3,11 @@ extends Node2D
 signal generate_applyer_graphics
 signal play_or_apply_rating
 
+var global_applyer_status_dict
 var g_applyer_graphics_pare = []
 
 signal good_end
-
 signal bad_end
-
 signal time_out
 
 func _ready():
@@ -227,6 +226,9 @@ func _applyer_status_generator():
 	applyer_status_dict["license"] = license
 	applyer_status_dict["occupation"] = occupation
 	applyer_status_dict["employment"] = employment
+	# global変数への代入
+	global_applyer_status_dict = applyer_status_dict
+	
 	emit_signal("generate_applyer_graphics", applyer_status_dict)
 	pass
 	
@@ -239,31 +241,40 @@ func _on_Applyer_graphics_pare(var body, var head):
 	pass
 	
 # ここでプレイヤー操作の評価を行う
-# 状態 -> 0:採用, 1:お祈り, 2:保留
-func _game_controller(var status):  
+# player_input -> 0:採用, 1:お祈り
+func _game_controller(var player_input):
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
 
-	var correct = 2
+	var correct = 0
 	var applyer_graphics = g_applyer_graphics_pare
 	if applyer_graphics[0] == 1:
-		correct = 1
+		correct = 2
 	if applyer_graphics[1] == 2:
-		correct = 1
+		correct = 2
 	if applyer_graphics[1] == 5:
-		correct = 1
+		correct = 2
 	if applyer_graphics[1] == 13:
-		correct = 1
-
+		correct = 2
 	if applyer_graphics[0] == -1:
-		correct = 1
+		correct = 2
 
-	if status == correct:
+	if (player_input == 0) and (correct == 0):
 		# 上場ゲージを伸ばす
 		#print("上場")
 		emit_signal("play_or_apply_rating", 0)
-	else:
+	elif player_input == 1:
+		# 保留なのでランダム抽選
+		if (rng.randi_range(0, 1) == 0):
+			emit_signal("play_or_apply_rating", 0)
+		else: 
+			emit_signal("play_or_apply_rating", 1)
+	elif (player_input == 0) and (correct != 0):
 		# 炎上ゲージを伸ばす
 		#print("炎上")
 		emit_signal("play_or_apply_rating", 1)
+	else:
+		pass
 		
 	print_debug(correct)
 	pass

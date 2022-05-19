@@ -28,6 +28,8 @@ func _generate_applyer_graphics(var dict):
 		head = rng.randi_range(8, 15)
 		animated_sprite_head.frame = head
 		
+		# ここでResume.gdに求職者の画像のインデックスを渡そう！
+		
 		if applyer_status["edu"] == "アート専門学校 3Dアーティストコース 卒業":
 			head = -1
 			body = -1
